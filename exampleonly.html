@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .quiz-container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .jumbotron {
+        padding: 100px 25px;
+      }
+
+      #demo1 {
+        text-align: center;
+        font-size: 250%;
+      }
+      .jumbotron #password {
+        background-color: black;
+        color: #fff;
+
+        padding: 100px 25px;
+      }
+
+      .correct-answer::after {
+        content: "\2713"; /* Unicode character for check mark */
+        color: green; /* Color of the check mark */
+        margin-left: 5px; /* Adjust as needed */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <div class="quiz-container">
+      <h1>Quiz Game</h1>
+      <div class="question" id="question1">
+        <h3>Question 1: What is the capital of France?</h3>
+        <input type="radio" name="answer1" value="Paris" /> Paris<br />
+        <input type="radio" name="answer1" value="London" /> London<br />
+        <input type="radio" name="answer1" value="Berlin" /> Berlin<br />
+        <input type="radio" name="answer1" value="Madrid" /> Madrid<br />
+      </div>
+      <div class="question" id="question2">
+        <h3>Question 2: What is the largest planet in our solar system?</h3>
+        <input type="radio" name="answer2" value="Mercury" /> Mercury<br />
+        <input type="radio" name="answer2" value="Venus" /> Venus<br />
+        <input type="radio" name="answer2" value="Jupiter" /> Jupiter<br />
+        <input type="radio" name="answer2" value="Saturn" /> Saturn<br />
+      </div>
+      <div class="question" id="question3">
+        <h3>Question 3: Who wrote "To Kill a Mockingbird"?</h3>
+        <input type="radio" name="answer3" value="Harper Lee" /> Harper Lee<br />
+        <input type="radio" name="answer3" value="J.K. Rowling" /> J.K.
+        Rowling<br />
+        <input type="radio" name="answer3" value="Stephen King" /> Stephen
+        King<br />
+        <input type="radio" name="answer3" value="George Orwell" /> George
+        Orwell<br />
+      </div>
+
+      <button id="submit">Submit Answers</button>
+    </div> -->
+
+    <!--NEW -->
+    <div class="container-fluid">
+      <section class="pt-5 pb-2 text-center container">
+        <div class="row">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Happy Birthday, Nej :)</h1>
+            <br /><br />
+            <p class="lead text-body-secondary">
+              Congratulations on reaching Level 2! <br />Now, let's play a quiz
+              game based on your favorites!
+            </p>
+            <p></p>
+          </div>
+        </div>
+      </section>
+
+      <!--question -->
+      <div class="card text-bg-info mb-3 question" id="question1">
+        <div class="card-header">1: What is Taylor Swift's birthday?</div>
+        <div class="card-body text-bg-info">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer1"
+                value="March18"
+                id="answer1"
+              />
+              <label class="form-check-label" for="answer1">
+                March 18, 1988.</label
+              >
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer1"
+                value="September12"
+                id="answer1"
+              />
+              <label class="form-check-label" for="answer1">
+                September 12, 1990.</label
+              >
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer1"
+                value="December14"
+                id="answer1"
+              />
+              <label class="form-check-label" for="answer1">
+                December 14, 1990.</label
+              >
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer1"
+                value="December13"
+                id="answer1"
+              />
+              <label class="form-check-label" for="answer1">
+                December 13, 1989.</label
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--question -->
+      <div class="card text-bg-info mb-3 question" id="question2">
+        <div class="card-header">
+          2: What alias does Phoebe use when she doesn't want to reveal her true
+          identity?
+        </div>
+        <div class="card-body text-bg-info">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer2"
+                value="princess"
+                id="answer2"
+              />
+              <label class="form-check-label" for="answer2">
+                Princess Consuela
+              </label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer2"
+                value="regina"
+                id="answer2"
+              />
+              <label class="form-check-label" for="answer2">
+                Regina Phalange</label
+              >
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer2"
+                value="bong"
+                id="answer2"
+              />
+              <label class="form-check-label" for="answer2">
+                Miss Chanandler Bong
+              </label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer2"
+                value="smellycat"
+                id="answer2"
+              />
+              <label class="form-check-label" for="answer2"> Smelly Cat </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--question -->
+      <div class="card text-bg-info mb-3 question" id="question3">
+        <div class="card-header">3: What is Ross's profession?</div>
+        <div class="card-body text-bg-info">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer3"
+                value="Paleontologist"
+                id="answer3"
+              />
+              <label class="form-check-label" for="answer3">
+                Paleontologist
+              </label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer3"
+                value="FashionDesigner"
+                id="answer3"
+              />
+              <label class="form-check-label" for="answer3">
+                Fashion Designer</label
+              >
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer3"
+                value="Actor"
+                id="answer3"
+              />
+              <label class="form-check-label" for="answer3"> Actor </label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer3"
+                value="Chef"
+                id="answer3"
+              />
+              <label class="form-check-label" for="answer3"> Chef</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--question -->
+      <div class="card text-bg-info mb-3 question" id="question4">
+        <div class="card-header">
+          4: What is the name of Phoebe's twin sister?
+        </div>
+        <div class="card-body text-bg-info">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer4"
+                value="Lily"
+                id="answer4"
+              />
+              <label class="form-check-label" for="answer4"> Lily </label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer4"
+                value="Megan"
+                id="answer4"
+              />
+              <label class="form-check-label" for="answer4"> Megan</label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer4"
+                value="Ursula"
+                id="answer4"
+              />
+              <label class="form-check-label" for="answer4"> Ursula</label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer4"
+                value="Rachel"
+                id="answer4"
+              />
+              <label class="form-check-label" for="answer4"> Rachel</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--question -->
+      <div class="card text-bg-info mb-3 question" id="question5">
+        <div class="card-header">5: One of Taylor Swift's pandemic albums.</div>
+        <div class="card-body text-bg-info">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer5"
+                value="Forevermore"
+                id="answer5"
+              />
+              <label class="form-check-label" for="answer5">
+                Forevermore
+              </label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer5"
+                value="Folklore"
+                id="answer5"
+              />
+              <label class="form-check-label" for="answer5"> Folklore</label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer5"
+                value="Tortured"
+                id="answer5"
+              />
+              <label class="form-check-label" for="answer5">
+                The Tortured Poets Department</label
+              >
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer5"
+                value="Midnights"
+                id="answer5"
+              />
+              <label class="form-check-label" for="answer5"> Midnights</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--question -->
+      <div class="card text-bg-info mb-3 question" id="question6">
+        <div class="card-header">
+          6: In the movie "The haunting of Bly Manor", where did Dani go to
+          escape her traumatic past?
+        </div>
+        <div class="card-body text-bg-info">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer6"
+                value="France"
+                id="answer6"
+              />
+              <label class="form-check-label" for="answer6"> France </label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer6"
+                value="Scotland"
+                id="answer6"
+              />
+              <label class="form-check-label" for="answer6"> Scotland</label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer6"
+                value="Italy"
+                id="answer6"
+              />
+              <label class="form-check-label" for="answer6"> Italy</label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer6"
+                value="England"
+                id="answer6"
+              />
+              <label class="form-check-label" for="answer6"> England</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--question -->
+      <div class="card text-bg-info mb-3 question" id="question7">
+        <div class="card-header">
+          7: In the series "You", it shows a character named "Guinevere Beck",
+          who aspires to be what?
+        </div>
+        <div class="card-body text-bg-info">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer7"
+                value="Teacher"
+                id="answer7"
+              />
+              <label class="form-check-label" for="answer7"> Teacher </label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer7"
+                value="Writer"
+                id="answer7"
+              />
+              <label class="form-check-label" for="answer7"> Writer</label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer7"
+                value="Painter"
+                id="answer7"
+              />
+              <label class="form-check-label" for="answer7"> Painter</label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer7"
+                value="Designer"
+                id="answer7"
+              />
+              <label class="form-check-label" for="answer7"
+                >Fashion Designer</label
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--question -->
+      <div class="card text-bg-info mb-3 question" id="question8">
+        <div class="card-header">
+          8: What did Joe Goldberg do to his ex, Candace, prior to Season 1?
+        </div>
+        <div class="card-body text-bg-info">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer8"
+                value="Drugged"
+                id="answer8"
+              />
+              <label class="form-check-label" for="answer8">
+                Drugged her
+              </label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer8"
+                value="Drowned"
+                id="answer8"
+              />
+              <label class="form-check-label" for="answer8"> Drowned her</label>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer8"
+                value="Buried"
+                id="answer8"
+              />
+              <label class="form-check-label" for="answer8">
+                Buried her alive</label
+              >
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="answer8"
+                value="Framed"
+                id="answer8"
+              />
+              <label class="form-check-label" for="answer8"
+                >Framed her for a crime she didn't commit</label
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <button
+        id="submit"
+        type="button"
+        class="submitanswer btn btn-primary mb-2"
+      >
+        Submit Answers
+      </button>
+    </div>
+
+    <!-- Input password -->
+    <div class="inputpassword container-fluid">
+      <div class="jumbotron text-center">
+        <div class="card border-info mb-3">
+          <div class="card-header" style="text-align: right">
+            <button
+              id="myPopover"
+              type="button"
+              class="btn btn-danger"
+              data-bs-toggle="popover"
+              data-bs-title="Clues to get the Code"
+              data-bs-content=""
+              data-bs-placement="top"
+            >
+              HINT
+            </button>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Well done!</h5>
+            <p class="card-text">Please Enter the code to get the next clue</p>
+            <form class="form-inline">
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="lol"
+                  name="lol"
+                  class="form-control"
+                  size="50"
+                  placeholder="Enter Code"
+                  required
+                />
+                <div class="input-group-btn">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="myFunction()"
+                  >
+                    Confirm
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL -->
+    <div
+      class="modal"
+      id="myModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Congratulations! :)
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-title">This is your next clue:</div>
+            <ul class="list-group">
+              <li class="list-group-item">Go to jen's bedroom closet</li>
+              <li class="list-group-item">Laptop</li>
+              <li class="list-group-item">Guest Room</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(".inputpassword").hide();
+      var totalQuestions = 3;
+      var password; // Define password globally
+
+      // Function to check answers and store correct ones
+      function checkAnswers() {
+        var correctAnswers = [];
+        $(".question").each(function (index) {
+          var selectedAnswer = $(this).find("input:checked").val();
+          var correctAnswer = getCorrectAnswer(index + 1);
+          if (selectedAnswer === correctAnswer) {
+            correctAnswers.push(index + 1);
+            // Add a check sign to the card if the answer is correct
+            $(this).find(".card-header").addClass("correct-answer");
+          }
+        });
+        return correctAnswers;
+      }
+
+      // Function to get correct answer for each question
+      function getCorrectAnswer(questionNumber) {
+        switch (questionNumber) {
+          case 1:
+            return "December13"; // Correct answer for Question 1
+          case 2:
+            return "regina"; // Correct answer for Question 2
+          case 3:
+            return "Paleontologist";
+          case 4:
+            return "Ursula";
+          case 5:
+            return "Folklore";
+          case 6:
+            return "England";
+          case 7:
+            return "Writer";
+          case 8:
+            return "Buried";
+          default:
+            return ""; // Return empty string if no correct answer is defined
+        }
+      }
+
+      // Function to validate password
+      function validatePassword(password) {
+        return password.length > 0;
+      }
+
+      // Function to display dialog
+      function displayDialog(message) {
+        alert(message);
+      }
+
+      // Submit button click event
+      $("#submit").click(function () {
+        var correctAnswers = checkAnswers();
+        console.log(correctAnswers);
+        if (correctAnswers.length > 0) {
+          //show the inputpassword form
+          password = correctAnswers.join("");
+        } else {
+          displayDialog("Please answer at least one question.");
+        }
+      });
+
+      $(".submitanswer").click(function () {
+        $(".inputpassword").show(); // Show the card element
+      });
+
+      // Get the button element
+      var btn = document.getElementById("myPopover");
+
+      // Set the popover content using JavaScript
+      var popoverContent =
+        '<ul class="list-group">' +
+        '<li class="list-group-item">Correct item numbers</li>' +
+        '<li class="list-group-item">Numbers only</li>' +
+        '<li class="list-group-item">Not the total correct answers</li>' +
+        '<li class="list-group-item">Alphabetical</li>' +
+        '<li class="list-group-item">No Spaces</li>' +
+        "</ul>";
+
+      // Initialize the popover
+      var popover = new bootstrap.Popover(btn, {
+        content: popoverContent,
+        html: true, // Enable HTML content
+      });
+
+      function myFunction() {
+        var inputPassword, text;
+        inputPassword = document.getElementById("lol").value;
+
+        console.log(inputPassword);
+
+        if (inputPassword === password) {
+          /* text = "Correct ka jan!";
+          document.getElementById("demo1").innerHTML = text; */
+          $("#myModal").modal("show");
+        } else {
+          displayDialog("Sorry, wrong code. Please try again.");
+        }
+      }
+    </script>
+  </body>
+</html>
